@@ -134,7 +134,7 @@ rmw_get_serialization_format(void);
 /**
  * This function can fail, and therefore return `NULL`, if:
  *   - name is not a valid non-null node name
- *   - namespace is not a valid non-null namespace
+ *   - namespace_ is not a valid non-null namespace
  *   - context is not valid i.e. it is zero-initialized, or
  *     its implementation identifier does not match that of
  *     this API implementation, or has been invalidated by
@@ -155,7 +155,7 @@ rmw_get_serialization_format(void);
  *
  * \param[in] context init context that this node should be associated with
  * \param[in] name the node name
- * \param[in] namespace the node namespace
+ * \param[in] namespace_ the node namespace
  * \param[in] domain_id the id of the domain that the node should join
  * \param[in] localhost_only whenever to use loopback only for communication or
  *   default network interfaces.
@@ -167,7 +167,7 @@ rmw_node_t *
 rmw_create_node(
   rmw_context_t * context,
   const char * name,
-  const char * namespace,
+  const char * namespace_,
   size_t domain_id,
   bool localhost_only);
 
